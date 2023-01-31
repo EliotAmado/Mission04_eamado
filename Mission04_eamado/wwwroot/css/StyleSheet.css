@@ -1,0 +1,25 @@
+﻿body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+label{
+    font-size: 25px;
+    width: 150px;
+}
+
+textarea{
+    font-size: 25px;
+}
+
+li{
+    list-style-type: none;
+    color: darkblue;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.background {
+    color: darkgray
+}

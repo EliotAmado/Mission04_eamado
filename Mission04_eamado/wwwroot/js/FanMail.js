@@ -1,5 +1,5 @@
 ﻿$('#ButtonSend').click(function () {
-    alert('From' + $('#textFrom').val +
+    alert('From' + $('#FinalGradeAlph').val +
         ", Subject: " + $("#textSubjects").val +
         ", Message: " + $("#textMessage").val);
 

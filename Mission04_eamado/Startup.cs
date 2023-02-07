@@ -16,13 +16,27 @@ namespace Mission04_eamado
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env) //env is an environment (or an error page)
         {
-            app.UseDefaultFiles(); //allows user to see the html page when website is ran without typing /inde.html on the url. Must be ontop of usedefaultfiles or wont work. 
+            if(env.IsEnvironment("Development"))
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            app.UseDeveloperExceptionPage();
             app.UseStaticFiles(); //allows us to use our html page we created by typing /index.html in url
+            app.UseRouting(); //routing uses endpoints that set up matches(almost like routes) for what the user types in.
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Blah}/{action=Index}/{id?}"   //returns the view of index in blahcontroller.cs. Its like a path/route but in c#
+                    );
+            });
+            
         }
     }
 }

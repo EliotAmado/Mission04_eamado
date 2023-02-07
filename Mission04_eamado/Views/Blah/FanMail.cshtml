@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model FanMailModel;
+
+<h2>Calculator</h2>
+<form method="post">
+    <label class="nowrap">Assignments: </label>
+    <input id="Assignments" asp-for="Calc1" /><br />
+    <label class="nowrap">Group Projects: </label>
+    <input id="GroupProjects" asp-for="Calc2" /><br />
+    <label class="nowrap">Quizzes: </label>
+    <input id="Quizzes" asp-for="Calc3" /><br />
+    <label class="nowrap">Midterm Exam: </label>
+    <input id="MidtermExam" asp-for="Calc4" /><br />
+    <label class="nowrap">Final Exam: </label>
+    <input id="FinalExam" asp-for="Calc5" /><br />
+    <label class="nowrap">INTEX: </label>
+    <input id="Intex" asp-for="Calc6" /><br />
+    <input id="calcButton" type="submit" asp-for="Calc7" value="calculate" />
+    <br />
+    <div asp-validation-summary="All"></div>
+    <div id="FinalGradeNumeric"></div>
+    <div id="FinalGradeAlph"></div>
+</form>
+<br />
+<script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="~/lib/jquery/jquery-3.6.3.min.js"></script>
+<script src="~/js/FanMail.js"></script>  <!--Importing javascript file happens at the end of a file-->
